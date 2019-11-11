@@ -26,6 +26,17 @@ class App extends React.Component {
     this.setState({ value: e.target.value });
   };
 
+  handleClickRemove = index => {
+    this.setState(
+      state => ({
+        items: [
+          ...state.items.slice(0, index),
+          ...state.items.slice(index + 1)
+        ]
+      }),
+    );
+  }
+
   render() {
     return (
       <div className="a">
@@ -36,7 +47,7 @@ class App extends React.Component {
           </div>
           <div className='d'>
             {this.state.items.map((value, idx) => (
-              <TodoItem key={idx} value={value} />
+              <TodoItem key={idx} index={idx} value={value} handleClickRemove={this.handleClickRemove} />
             ))}
           </div>
         </div>
