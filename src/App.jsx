@@ -37,6 +37,14 @@ class App extends React.Component {
     );
   }
 
+  change = (e, input) => {
+    const items = this.state.items;
+    items[e] = input;
+    this.setState({
+      items
+    });
+  }
+
   render() {
     return (
       <div className="a">
@@ -47,7 +55,7 @@ class App extends React.Component {
           </div>
           <div className='d'>
             {this.state.items.map((value, idx) => (
-              <TodoItem key={idx} index={idx} value={value} handleClickRemove={this.handleClickRemove} />
+              <TodoItem key={idx} index={idx} value={value} handleClickRemove={this.handleClickRemove} change={this.change} />
             ))}
           </div>
         </div>
