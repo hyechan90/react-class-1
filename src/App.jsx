@@ -51,7 +51,7 @@ class App extends React.Component {
         <div className="b">
           <div className="c">
             <input type="text" onChange={this.onChange} style={{ width: "80%", borderRadius: "30px", border: "2px solid #4fc1e9", fontSize: "25px" }} />
-            <Button onClick={this.onClickAdd} style={{ width: "10%" }}>추가</Button>
+            <Button onClick={this.onClickAdd} style={{ width: "10%" }}  >추가</Button>
           </div>
           <div className='d'>
             {this.state.items.map((value, idx) => (
